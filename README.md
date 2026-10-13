@@ -20,18 +20,18 @@ The AI pipeline is engineered for high accuracy and low latency in a web environ
 
 ### 🎯 Real-Time Gesture Detection (MediaPipe + SVM in Action)
 *(Observe the precise hand landmark mapping and real-time AI classification on the bottom right)*
-![AI Detection](documentation/Screenshot%202026-04-23%20121230.jpg)
+![AI Detection](documentation/Screenshot%202026-04-23%20121230.png)
 
 ## 💻 Software Development & UI/UX
 Beyond the AI model, this project is a fully functional web application demonstrating strong frontend capabilities.
 
 ### Interactive Dashboard & Gamification
 Features an adaptive learning map, streak tracking, and XP accumulation to ensure high user retention.
-![Dashboard](documentation/Screenshot%202026-04-23%20120757.jpg)
+![Dashboard](documentation/Screenshot%202026-04-23%20120757.png)
 
 ### Comprehensive SIBI Dictionary
 A visually engaging, custom-built UI component for users to study A-Z hand movements before entering the AI evaluation phase.
-![Dictionary](documentation/Screenshot%202026-04-23%20124134.jpg)
+![Dictionary](documentation/Screenshot%202026-04-23%20124134.png)
 
 ### Session Summary & Analytics
 Calculates real-time precision and reaction time to provide dynamic feedback to the user after each stage.
