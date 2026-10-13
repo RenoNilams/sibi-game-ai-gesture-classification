@@ -1,73 +1,49 @@
-# React + TypeScript + Vite
+# 🤟 SIBI Master: AI-Based Gesture Classification System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![MediaPipe](https://img.shields.io/badge/MediaPipe-00B4EB?style=for-the-badge)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white)
+![ONNX](https://img.shields.io/badge/ONNX-005CED?style=for-the-badge&logo=onnx&logoColor=white)
 
-Currently, two official plugins are available:
+## 📌 Overview
+SIBI Master is an end-to-end interactive educational gamification platform designed to teach **Sistem Isyarat Bahasa Indonesia (SIBI)**. At its core, the application integrates a robust **Machine Learning** architecture that captures user gestures in real-time via a web camera and provides immediate classification feedback.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project successfully achieved a **98.92% accuracy rate** and was officially published in the Sinta 4 indexed journal *(Indonesian Journal of Digital Business, April 2026)*.
 
-## React Compiler
+## 🧠 AI & Machine Learning Architecture
+The AI pipeline is engineered for high accuracy and low latency in a web environment:
+*   **Feature Extraction:** Utilizes **MediaPipe Hand Tracking** to extract 21 3D hand landmarks (x, y, z coordinates) per frame.
+*   **Classification Model:** A **Support Vector Machine (SVM)** algorithm trained with Scikit-learn to classify complex spatial data of sign language alphabets.
+*   **Web Deployment:** The trained Python model is exported and optimized using **ONNX Runtime Web**, allowing the heavy ML inference to run entirely on the client-side browser without server lag.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 🎯 Real-Time Gesture Detection (MediaPipe + SVM in Action)
+*(Observe the precise hand landmark mapping and real-time AI classification on the bottom right)*
+![AI Detection](documentation/Screenshot%202026-04-23%20121230.jpg)
 
-## Expanding the ESLint configuration
+## 💻 Software Development & UI/UX
+Beyond the AI model, this project is a fully functional web application demonstrating strong frontend capabilities.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Interactive Dashboard & Gamification
+Features an adaptive learning map, streak tracking, and XP accumulation to ensure high user retention.
+![Dashboard](documentation/Screenshot%202026-04-23%20120757.jpg)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Comprehensive SIBI Dictionary
+A visually engaging, custom-built UI component for users to study A-Z hand movements before entering the AI evaluation phase.
+![Dictionary](documentation/Screenshot%202026-04-23%20124134.jpg)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Session Summary & Analytics
+Calculates real-time precision and reaction time to provide dynamic feedback to the user after each stage.
+![Summary](documentation/Screenshot%202026-04-23%20122201.png)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🛠️ Tech Stack
+*   **AI/ML:** Python, MediaPipe, Support Vector Machine (SVM), Scikit-learn, ONNX Runtime Web.
+*   **Frontend:** React.js, TypeScript, Vite, Tailwind CSS.
+*   **Backend/BaaS:** Firebase Authentication & Firestore (for user progression and leaderboard).
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🚀 How to Run Locally
+1. Clone the repository: `git clone https://github.com/RenoNilams/sibi-game-ai-gesture-classification.git`
+2. Install dependencies: `npm install`
+3. Start the development server: `npm run dev`
+4. Open `http://localhost:5173` in your browser.
